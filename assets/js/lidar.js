@@ -87,7 +87,45 @@ const lidarSketch = p => {
       }
     });
 
+    // Draw robot at center
+    p.push();
+    p.rotate(angleOffset);
+    
+    // Robot glow
+    p.fill(168, 85, 247, 40);
+    p.noStroke();
+    p.ellipse(0, 0, 32, 32);
 
+    // Robot body
+    p.fill(0, 120, 255);
+    p.stroke(0, 180, 255);
+    p.strokeWeight(2);
+    p.rect(-12, -10, 24, 20, 3);
+
+    // Wizard hat
+    p.fill(168, 85, 247);
+    p.noStroke();
+    p.triangle(-14, -10, 14, -10, 0, -24);
+    p.fill(147, 51, 234);
+    p.rect(-16, -10, 32, 4);
+
+    // Hat star
+    p.fill(255, 215, 0);
+    p.textSize(10);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.text('✨', 0, -18);
+
+    // Eyes
+    p.fill(255);
+    p.noStroke();
+    p.ellipse(-5, -3, 3, 3);
+    p.ellipse(5, -3, 3, 3);
+
+    // Front indicator
+    p.fill(0, 255, 200);
+    p.triangle(10, -5, 10, 5, 16, 0);
+
+    p.pop();
 
     // Distance measurement display
     p.resetMatrix();
